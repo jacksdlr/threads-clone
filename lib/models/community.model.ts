@@ -5,14 +5,14 @@ const communitySchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  username: {
+    type: String,
+    unique: true,
+    required: true,
+  },
   name: {
     type: String,
     required: true,
-  },
-  username: {
-    type: String,
-    required: true,
-    unique: true,
   },
   image: String,
   bio: String,
@@ -26,10 +26,12 @@ const communitySchema = new mongoose.Schema({
       ref: 'Thread',
     },
   ],
-  members: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
-  },
+  members: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+    },
+  ],
 });
 
 const Community =

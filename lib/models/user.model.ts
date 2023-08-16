@@ -5,14 +5,14 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  username: {
+    type: String,
+    unique: true,
+    required: true,
+  },
   name: {
     type: String,
     required: true,
-  },
-  username: {
-    type: String,
-    required: true,
-    unique: true,
   },
   image: String,
   bio: String,
