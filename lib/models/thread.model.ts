@@ -7,10 +7,10 @@ const threadSchema = new mongoose.Schema({
   },
   author: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Community',
+    ref: 'User',
     required: true,
   },
-  communityId: {
+  community: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Community',
   },
